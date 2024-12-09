@@ -15,3 +15,6 @@ output "size_list" {
 output "result_join" {
   value = local.chaine
 }
+output "from_template" {
+    value = [for n in var.names : templatefile("${path.module}/example.tpl", {name = n})]
+}
