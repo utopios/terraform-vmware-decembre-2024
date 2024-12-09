@@ -19,6 +19,12 @@ variable "instance_type" {
   }
 }
 
+variable "names" {
+  description = "list of names"
+  type = list(string)
+  default = [ "toto", "tata", "titi" ]
+}
+
 
 # variable "instance_size" {
 #   description = "size of resource"
@@ -28,6 +34,7 @@ variable "instance_type" {
 ### pour avoir des variables calculées à l'execution du script terraform, on peut créer les variables dans un block locals
 locals {
   size_instance = var.instance_type == "small" ? "micro" : "big" 
+  messages = [for name in var.names : "Welecome ${name}"]
 }
 
 output "output_envrionment" {
@@ -37,3 +44,8 @@ output "output_envrionment" {
 output "output_size" {
   value = local.size_instance
 }
+
+output "out_message" {
+  value = local.messages
+}
+
