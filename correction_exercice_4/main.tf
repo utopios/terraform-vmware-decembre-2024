@@ -1,7 +1,7 @@
 variable "names" {
   description = "list of names"
   type = list(string)
-  default = [ "toto", "tata", "titi" ]
+  default = [ "toto", "tata", "titi", "minet" ]
 }
 
 locals {
