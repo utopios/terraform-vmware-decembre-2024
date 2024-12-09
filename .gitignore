@@ -1,0 +1,42 @@
+# Fichiers de configuration locaux
+*.tfvars.json
+secret.tfvars
+secret.tfvars.json
+
+# Fichiers d'état de Terraform
+*.tfstate
+*.tfstate.*
+tfplan
+.terraform/
+**/.terraform/
+
+# Fichiers de verrouillage
+.terraform.lock.hcl
+
+**/.terraform.lock.hcl
+
+# Fichiers de sauvegarde
+*.tfstate.backup
+*.tfbackup
+*.tfvars.backup
+
+# Fichiers de logs
+terraform.log
+crash.log
+
+# Répertoires ignorés
+.terraform.d/
+.terraform/
+**/.terraform/
+*.retry
+
+# Fichiers spécifiques aux environnements IDE ou éditeurs de texte
+.project
+.idea/
+*.iml
+.vscode/
+
+# Fichiers système
+.DS_Store
+**/.DS_Store
+Thumbs.db
