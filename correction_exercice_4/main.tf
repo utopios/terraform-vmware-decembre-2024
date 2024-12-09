@@ -8,6 +8,10 @@ locals {
   chaine = join(",", var.names)
 }
 
+output "size_list" {
+  value = length(var.names)
+}
+
 output "result_join" {
   value = local.chaine
 }
