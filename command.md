@@ -16,3 +16,4 @@ tarraform plan -var-file="file_vars_value_tfvars"
 3. Fichier de Variables Terraform: Ensuite, Terraform cherche les variables dans les fichiers .tfvars ou .tfvars.json.
 4. Valeurs par Défaut: Enfin, si aucune valeur n'est fournie par les méthodes ci-dessus, Terraform utilise la valeur par défaut définie dans les fichiers de configuration.
 5. mode intéractif.
+
