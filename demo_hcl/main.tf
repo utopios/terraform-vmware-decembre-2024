@@ -21,3 +21,14 @@ variable "var_1" {
 output "output_var_1" {
   value = var.var_1
 }
+
+
+output "selected_datacenter" {
+  value = var.datacenter
+}
+output "selected_resource_pools" {
+  value = var.resource_pools
+}
+output "vm_common_tags" {
+  value = var.vm_tags
+}
