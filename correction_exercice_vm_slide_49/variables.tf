@@ -8,6 +8,10 @@ variable "vsphere_password" {
   description = "vsphere password"
   type = string
 }
+variable "admin_password" {
+  description = "ubuntu password"
+  type = string
+}
 
 variable "vsphere_server" {
   type = string

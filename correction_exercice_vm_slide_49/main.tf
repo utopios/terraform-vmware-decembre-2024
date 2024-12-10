@@ -54,4 +54,18 @@ resource "vsphere_virtual_machine" "vm" {
     path = var.vm_information.path_iso
   }
   wait_for_guest_net_timeout = 0
+
+
+  provisioner "remote-exec" {
+    inline = [
+      "sudo apt-get update",
+      "sudo apt-get install -y apache2",
+    ]
+    connection {
+      type     = "ssh"
+      user     = "ubuntu"
+      password = "${var.admin_password}"
+      host     = "${self.default_ip_address}"
+    }
+  }
 }
