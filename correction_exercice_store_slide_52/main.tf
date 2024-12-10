@@ -57,3 +57,29 @@ resource "vsphere_nas_datastore" "datastore" {
   remote_hosts = var.datastore_nfs_remote
   remote_path  = var.datastore_nfs_remote_path
 }
+
+# -------------------------------
+# Application de la politique de stockage (pour les environnements de test)
+# -------------------------------
+resource "vsphere_vm_storage_policy" "test_storage_policy" {
+  name            = "Test-Storage-Policy"
+  description     = "Politique de stockage pour les VMs de test"
+  tag_rules {
+    tag_category = ""
+    tags = [""]
+
+  }
+}
+
+# -------------------------------
+# Application de la politique de stockage (pour les environnements de production)
+# -------------------------------
+resource "vsphere_vm_storage_policy" "production_storage_policy" {
+  name            = "Production-Storage-Policy"
+  description     = "Politique de stockage pour les VMs de production"
+  tag_rules {
+    tag_category = ""
+    tags = [""]
+
+  }
+}
