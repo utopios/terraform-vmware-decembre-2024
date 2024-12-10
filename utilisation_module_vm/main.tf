@@ -10,7 +10,7 @@ module "data_information" {
 }
 
 module "vm_module" {
-  source = "../module_vm"
+  source = "git::https://github.com/utopios/vm_terraform_vmware.git"
   vm_information = {
     name     = "Ihab"
     num_cpus = 1
