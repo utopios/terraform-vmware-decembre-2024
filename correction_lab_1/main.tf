@@ -33,3 +33,20 @@ resource "vsphere_host_virtual_switch" "switch" {
   active_nics  = var.vsphere_vswitch_information.active_nics
   standby_nics = var.vsphere_vswitch_information.standby_nics
 }
+
+
+resource "vsphere_host_port_group" "pg_ihab" {
+  name                = each.value
+  host_system_id      = data.vsphere_host.host.id
+  #virtual_switch_name = var.vsphere_vswitch_information.name
+  virtual_switch_name = vsphere_host_virtual_switch.switch.name
+  for_each = var.vsphere_port_list_group
+  #depends_on = [ vsphere_host_virtual_switch.switch ]
+}
+
+resource "vsphere_host_port_group" "pg_ihab_extra_group" {
+  count = var.vsphere_port_group_extra_group ? 1 : 0
+  name                = var.vsphere_port_group_extra_group_name
+  host_system_id      = data.vsphere_host.host.id
+  virtual_switch_name = vsphere_host_virtual_switch.switch.name
+}

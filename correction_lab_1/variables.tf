@@ -39,3 +39,20 @@ variable "vsphere_vswitch_information" {
     })
     
 }
+
+variable "vsphere_port_list_group" {
+  type = set(string)
+  description = "List of port group"
+}
+
+variable "vsphere_port_group_extra_group" {
+  description = "extra group port"
+  type = bool
+  default = false
+}
+
+variable "vsphere_port_group_extra_group_name" {
+  description = "extra group port name"
+  type = string
+  default = "Name Of Extra group"
+}
