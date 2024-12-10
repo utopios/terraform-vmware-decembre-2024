@@ -7,4 +7,5 @@ vm_information = {
     label = "Disk vm ihab"
      size = 40 
   }
+  path_iso = "iso/ubuntu-24.04.1-desktop-amd64.iso"
 }

@@ -49,5 +49,9 @@ resource "vsphere_virtual_machine" "vm" {
     label = var.vm_information.disk.label
     size  = var.vm_information.disk.size
   }
+  cdrom {
+    datastore_id = data.vsphere_datastore.datastore.id
+    path = var.vm_information.path_iso
+  }
   wait_for_guest_net_timeout = 0
 }

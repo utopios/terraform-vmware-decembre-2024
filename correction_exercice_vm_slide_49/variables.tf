@@ -52,5 +52,6 @@ variable "vm_information" {
       label = string
       size = number 
     })
+    path_iso = string
   })
 }
