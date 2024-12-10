@@ -26,3 +26,8 @@ module "vm_module" {
   pool_id = module.data_information.pool_id
   datastore_id = module.data_information.datastore_id
 }
+
+output "datastore_id" {
+  value = module.data_information.datastore_id
+  sensitive = true
+}
